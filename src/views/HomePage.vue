@@ -24,6 +24,7 @@ const rules = [
   'Luôn có link về trang chủ — mỗi trang con phải có link quay lại trang chủ',
   'Ngôn ngữ: tiếng Việt (ưu tiên) hoặc tiếng Anh',
   'Không trùng ứng dụng con đã có — kiểm tra danh sách trang trước khi tạo mới',
+  'Trùng ý tưởng — nếu hai người cùng tạo PR cho một ý tưởng giống nhau, PR nào tạo trước sẽ được ưu tiên merge',
   'Mỗi trang con hoạt động độc lập — không sửa file dùng chung ngoài route và HomePage',
   'Responsive — trang phải hiển thị tốt trên mobile',
   'Không thêm dependency mới trừ khi thật sự cần và được approve',
@@ -67,7 +68,7 @@ function padIndex(i: number): string {
           Sẽ thế nào nếu cả nhóm J2TEAM Community vibe code cùng nhau?
         </p>
         <p class="mt-2 text-sm text-text-dim">
-          Mỗi thành viên tạo một trang con, vibe code thoải mái, rồi thêm link vào đây.
+          Mỗi thành viên tạo một trang con — có thể là một ứng dụng nhỏ hoặc trò chơi nhỏ trên nền web, vibe code thoải mái, rồi thêm link vào đây.
         </p>
       </div>
 
