@@ -65,7 +65,16 @@ function padIndex(i: number): string {
       <!-- Subtitle with coral left border -->
       <div class="mt-8 border-l-4 border-accent-coral pl-5 max-w-xl animate-fade-up animate-delay-3">
         <p class="text-base sm:text-lg text-text-secondary leading-relaxed">
-          Sẽ thế nào nếu cả nhóm J2TEAM Community vibe code cùng nhau?
+          Sẽ thế nào nếu cả nhóm
+          <a
+            href="https://www.facebook.com/groups/j2team.community/"
+            target="_blank"
+            rel="noopener"
+            class="text-accent-coral link-underline"
+          >
+            J2TEAM Community
+          </a>
+          vibe code cùng nhau?
         </p>
         <p class="mt-2 text-sm text-text-dim">
           Mỗi thành viên tạo một trang con — có thể là một ứng dụng nhỏ hoặc trò chơi nhỏ trên nền web, vibe code thoải mái, rồi thêm link vào đây.
