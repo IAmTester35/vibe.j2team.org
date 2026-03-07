@@ -95,8 +95,8 @@ function animate() {
     animationId = requestAnimationFrame(animate)
   }
 
-  for (let i = 0; i < dvdArray.length; i++) {
-    dvdArray[i].run()
+  for (const dvd of dvdArray) {
+    dvd.run()
   }
 }
 
