@@ -7,10 +7,7 @@ const { product, visible, dismiss } = useSpotlightProduct()
 
 <template>
   <Transition name="spotlight">
-    <div
-      v-if="visible && product"
-      class="fixed bottom-20 right-6 z-40 w-72 max-sm:right-4 max-sm:left-4 max-sm:w-auto max-sm:bottom-16"
-    >
+    <div v-if="visible && product" class="fixed z-40 bottom-20 right-6 w-72 max-sm:hidden">
       <div
         class="relative border border-border-default bg-bg-surface p-4 shadow-lg transition-colors duration-300 hover:border-accent-coral/50"
       >
@@ -25,7 +22,6 @@ const { product, visible, dismiss } = useSpotlightProduct()
 
         <!-- Product link -->
         <a :href="product.url" target="_blank" rel="noopener noreferrer" class="block">
-          <!-- Header: logo + name -->
           <div class="flex items-center gap-3">
             <img
               :src="product.logo_url"
@@ -33,18 +29,18 @@ const { product, visible, dismiss } = useSpotlightProduct()
               loading="lazy"
               class="w-10 h-10 object-cover flex-shrink-0"
             />
-            <span class="font-display font-semibold text-text-primary text-sm leading-tight">
-              {{ product.name }}
-            </span>
+            <div class="flex-1 min-w-0">
+              <span class="font-display font-semibold text-text-primary text-sm leading-tight">
+                {{ product.name }}
+              </span>
+              <p class="text-xs text-text-secondary mt-1 line-clamp-2 leading-relaxed">
+                {{ product.tagline }}
+              </p>
+            </div>
           </div>
 
-          <!-- Tagline -->
-          <p class="text-xs text-text-secondary mt-2 line-clamp-2 leading-relaxed">
-            {{ product.tagline }}
-          </p>
-
-          <!-- Footer: votes + CTA -->
-          <div class="flex items-center justify-between mt-3">
+          <!-- Footer: desktop only -->
+          <div class="flex items-center justify-between mt-3 max-sm:hidden">
             <span class="flex items-center gap-1 text-xs text-text-dim">
               <Icon icon="lucide:chevrons-up" class="w-3.5 h-3.5" />
               {{ product.votes_count }}
@@ -55,8 +51,10 @@ const { product, visible, dismiss } = useSpotlightProduct()
           </div>
         </a>
 
-        <!-- Powered by -->
-        <div class="text-[10px] text-text-dim mt-2 text-center border-t border-border-default pt-2">
+        <!-- Powered by: desktop only -->
+        <div
+          class="text-[10px] text-text-dim mt-2 text-center border-t border-border-default pt-2 max-sm:hidden"
+        >
           Powered by
           <a
             href="https://launch.j2team.dev?utm_source=vibe&utm_medium=spotlight"
